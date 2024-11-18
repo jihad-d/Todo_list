@@ -9,14 +9,18 @@ type TaskStatus = "To Do" | "In Progress" | "Done"; //limite les status de la ta
 
 //recup les taches du user connecte
 export const getUserTasks = query({
-  args: { userId: v.id("users") }, //attend l'argument : id 
-  handler: async (ctx, { userId }) => { //fonction qui execute la logique 
-    return await ctx.db //interroge la bd pour recupere les info de la table tasks 
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx); //recup l'user connecte
+    if (!userId) throw new Error("Not signed in");
+
+    // renvoie les taches du user
+    return await ctx.db
       .query("tasks")
-      .filter((q) => q.eq(q.field("userId"), userId)) //filtre les taches en fonction de l'id  
+      .filter((q) => q.eq(q.field("userId"), userId))
       .collect();
   },
 });
+
 
 
 //ajt tache

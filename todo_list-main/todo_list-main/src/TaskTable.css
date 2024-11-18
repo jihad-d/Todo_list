@@ -1,0 +1,119 @@
+/*container principal*/
+.task-table-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: rgb(255, 255, 255);
+  }
+  
+  h1 {
+    font-size: small;
+    color: #ffffff;
+  }
+  
+  /*ajt de tache */
+  .task-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /*champ de saisie */
+  .task-input-container input {
+    padding: 10px;
+    font-size: 1em;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* btn ajt tache*/
+  .task-input-container button {
+    padding: 10px 20px;
+    background-color: #245d26;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .task-input-container button:hover {
+    background-color: #45a049;
+  }
+  
+  /*tableau tache */
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /*titre tableau*/
+  .task-table th {
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /*corps tableau */
+  .task-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /*separation des colonnes en fonction du status*/
+  .task-table td {
+    vertical-align: top;
+    width: 33%;
+    box-sizing: border-box;
+  }
+  
+  /* btn tableau*/
+  .task-table button {
+    margin: 5px 0;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .task-table button:hover {
+    background-color: #0056b3;
+  }
+  
+  /*couleur selon le status */
+  .task-table td div {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .task-table td .task-to-do {
+    background-color: #b4aa55; 
+    color: black;
+  }
+  
+  .task-table td .task-in-progress {
+    background-color: #ffa726; 
+  }
+  
+  .task-table td .task-done {
+    background-color: #66bb6a; 
+  }
+  
+  /* espace entre btn tableau */
+  .task-table td div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
