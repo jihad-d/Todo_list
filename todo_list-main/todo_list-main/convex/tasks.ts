@@ -50,6 +50,26 @@ export const getAllTasks = query({
 });
 
 
+//maj tache
+export const updateTask = mutation({
+  args: {
+    taskId: v.id("tasks"),
+    text: v.string(),
+  },
+  handler: async (ctx, { taskId, text }) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) throw new Error("Not signed in");
+
+    const task = await ctx.db.get(taskId);
+    if (!task || task.userId !== userId) {
+      throw new Error("Not authorized to update this task");
+    }
+
+    await ctx.db.patch(taskId, { text });
+  },
+});
+
+
 //maj status tache
 export const updateTaskStatus = mutation({
   args: {
