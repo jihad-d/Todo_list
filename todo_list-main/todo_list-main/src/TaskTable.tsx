@@ -1,6 +1,3 @@
-// import React, { useState } from 'react';
-// import TaskList from './TaskList'; 
-// import './TaskTable.css'; 
 import { Id } from "../convex/_generated/dataModel";
 import React, { useState } from 'react';
 import { useMutation, useQuery } from "convex/react";
